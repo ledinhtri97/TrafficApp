@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import image from "assets/img/sidebar-2.jpg";
-
 class App extends React.Component {
 	state = {
 
@@ -12,14 +10,14 @@ class App extends React.Component {
 		return(
 			<Drawer
           		variant="temporary"
-          		anchor={props.rtlActive ? "left" : "right"}
-          		open={props.open}
+          		anchor={"left" }
+          		open={true}
           		classes={{
           		  paper: classNames(classes.drawerPaper, {
           		    [classes.drawerPaperRTL]: props.rtlActive
           		  })
           		}}
-          		onClose={props.handleDrawerToggle}
+          		onClose={this.handleDrawerToggle}
           		ModalProps={{
           		  keepMounted: true // Better open performance on mobile.
           		}}
