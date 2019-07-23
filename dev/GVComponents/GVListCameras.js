@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const GVListCamerasStyles = makeStyles(theme => ({
 	root: {
-		width: '20%',
+		width: '18%',
 		height: '100%',
 		overflowY: 'scroll',
 	},
@@ -34,7 +34,7 @@ export default function GVListCameras() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="style-7">
       <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}

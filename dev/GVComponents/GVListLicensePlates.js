@@ -33,7 +33,7 @@ export default function GVListLicensePlates() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="style-7">
       <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
