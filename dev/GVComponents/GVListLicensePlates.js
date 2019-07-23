@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { makeStyles } from '@material-ui/core/styles';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import PanoramaOutlined from '@material-ui/icons/PanoramaOutlined';
 
 const GVListLicensePlatesStyles = makeStyles(theme => ({
 	root: {
@@ -22,74 +26,191 @@ const GVListLicensePlatesStyles = makeStyles(theme => ({
 		fontSize: theme.typography.pxToRem(15),
 		color: theme.palette.text.secondary,
 	},
+  list: {
+    width: '100%',
+    maxWidth: 260,
+    backgroundColor: theme.palette.background.paper,
+    marginTop: '20px',
+  },
+  inline: {
+    display: 'inline',
+  },
+  topText: {
+    width: '18%',
+    color: "#FFFFFF",
+    textAlign: 'center',
+    position: 'fixed',
+    zIndex: 1,
+    backgroundColor: '#373a9e',
+    borderRadius: '15px,'
+  },
 }));
 
 export default function GVListLicensePlates() {
   const classes = GVListLicensePlatesStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleChange = panel => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
 
   return (
     <div className={classes.root} id="style-7">
-      <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          <Typography className={classes.heading}>General settings</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Nulla facilisi.
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2bh-content"
-          id="panel2bh-header"
-        >
-          <Typography className={classes.heading}>Users</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Donec placerat, 
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
-        >
-          <Typography className={classes.heading}>Advanced</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Nunc vitae orci 
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
-        >
-          <Typography className={classes.heading}>Personal data</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Nunc vitae 
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
+      <div className={classes.topText}>
+        <Typography align="center" variant="h6">
+          List License Plate
+        </Typography>
+      </div>
+      <List className={classes.list}>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <PanoramaOutlined />
+        </ListItemAvatar>
+        <ListItemText
+          primary="74C1-23299"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                14:32:25s
+              </Typography>
+              {" — Motorbike | In tracking..."}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <PanoramaOutlined />
+        </ListItemAvatar>
+        <ListItemText
+          primary="64C1-99999"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                14:15:52s
+              </Typography>
+              {" — Motorbike | In tracking..."}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <PanoramaOutlined />
+        </ListItemAvatar>
+        <ListItemText
+          primary="64B1-43434"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                14:10:12s
+              </Typography>
+              {' — Car | Out of tracking...'}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <PanoramaOutlined />
+        </ListItemAvatar>
+        <ListItemText
+          primary="59C1-21523"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                13:54:54s
+              </Typography>
+              {' — Truck | In tracking...'}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <PanoramaOutlined />
+        </ListItemAvatar>
+        <ListItemText
+          primary="72K4-89565"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                13:51:41s
+              </Typography>
+              {' — Motorbike | In tracking...'}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <PanoramaOutlined />
+        </ListItemAvatar>
+        <ListItemText
+          primary="59F4-23524"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                13:34:19s
+              </Typography>
+              {' — Car | Out of tracking...'}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <PanoramaOutlined />
+        </ListItemAvatar>
+        <ListItemText
+          primary="59F4-89899"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                13:12:40s
+              </Typography>
+              {' — Bus | Out of tracking...'}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      </List>
     </div>
   );
 }
