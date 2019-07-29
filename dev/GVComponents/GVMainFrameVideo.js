@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 
 const GVMainFrameVideoStyles = theme => ({
-
+	root: {
+		width: '100%',
+		height: '80%',
+		display: 'flex',
+		justifyContent: 'center',
+		alignContent: 'center',
+	}
 });
 
 class GVMainFrameVideo extends React.Component {
@@ -16,7 +22,8 @@ class GVMainFrameVideo extends React.Component {
 		const {classes} = this.props;
 
 		return (
-			<div>
+			<div className={classes.root}>
+				<iframe width="100%" height="auto" src="./static/videos/vl.mp4" allowFullScreen></iframe>
 			</div>
 		);
 	};
