@@ -9,7 +9,81 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import PanoramaOutlined from '@material-ui/icons/PanoramaOutlined';
+
+const listLicensePlate = [
+	{
+		src: "./static/imgs/license_plate/0_img_01.png",
+		captime: '14:01:41s',
+		textlp: '64B-00383',
+		textinfo: ' — car',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_02.png",
+		captime: '14:02:41s',
+		textlp: '64B1-05313',
+		textinfo: ' — motorbike',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_03.png",
+		captime: '14:03:41s',
+		textlp: '64C1-25035',
+		textinfo: ' — motorbike',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_04.png",
+		captime: '14:04:41s',
+		textlp: '64A-06838',
+		textinfo: ' — car',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_05.png",
+		captime: '14:05:41s',
+		textlp: '64B5-3687',
+		textinfo: ' — motorbike',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_06.png",
+		captime: '14:06:41s',
+		textlp: '59C2-10655',
+		textinfo: ' — motorbike',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_07.png",
+		captime: '14:07:41s',
+		textlp: '64H-5266',
+		textinfo: ' — truck',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_08.png",
+		captime: '14:08:41s',
+		textlp: '64H7-9997',
+		textinfo: ' — motorbike',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_09.png",
+		captime: '14:09:41s',
+		textlp: '71B1-97368',
+		textinfo: ' — motorbike',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_10.png",
+		captime: '14:10:41s',
+		textlp: '64H-5266',
+		textinfo: ' — car',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_11.png",
+		captime: '14:11:41s',
+		textlp: '64A-00148',
+		textinfo: ' — car',
+	},
+	{
+		src: "./static/imgs/license_plate/0_img_12.png",
+		captime: '14:12:41s',
+		textlp: '64C-03889',
+		textinfo: ' — car',
+	}
+];
 
 const GVListLicensePlatesStyles = makeStyles(theme => ({
 	root: {
@@ -44,7 +118,62 @@ const GVListLicensePlatesStyles = makeStyles(theme => ({
     backgroundColor: '#373a9e',
     borderRadius: '15px,'
   },
+  logo: {
+    	marginRight: 5,
+    	width: 60,
+    	height: 60,
+  	},
+  	rootAvatar:{
+  		borderRadius: 0,
+  	},
+  	imgAvatar:{
+  		objectFit: 'contain',
+  	},
 }));
+
+class LicensePlateItem extends React.Component{
+	state = {
+
+	}
+
+	render(){
+		const {classes, src, captime, textlp, textinfo} = this.props;
+
+		return (
+			<React.Fragment>
+				<ListItem alignItems="flex-start">
+			        <ListItemAvatar>
+			          <Avatar alt="GVLab" 
+			          src={src} className={classes.logo}
+			          classes={{
+			          	root: classes.rootAvatar,
+			          	img: classes.imgAvatar
+			          }}/>
+			        </ListItemAvatar>
+			        <ListItemText
+			          primary={textlp}
+			          secondary={
+			            <React.Fragment>
+			              <Typography
+			                component="span"
+			                variant="body2"
+			                className={classes.inline}
+			                color="textPrimary"
+			              >
+			                {captime}
+			              </Typography>
+			              {textinfo}
+			            </React.Fragment>
+			          }
+			        />
+			    </ListItem>
+			    <Divider variant="inset" component="li" />
+			</React.Fragment>
+		)
+	}
+}
+
+
 
 export default function GVListLicensePlates() {
   const classes = GVListLicensePlatesStyles();
@@ -57,159 +186,15 @@ export default function GVListLicensePlates() {
         </Typography>
       </div>
       <List className={classes.list}>
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <PanoramaOutlined />
-        </ListItemAvatar>
-        <ListItemText
-          primary="74C1-23299"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                14:32:25s
-              </Typography>
-              {" — Motorbike | In tracking..."}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <PanoramaOutlined />
-        </ListItemAvatar>
-        <ListItemText
-          primary="64C1-99999"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                14:15:52s
-              </Typography>
-              {" — Motorbike | In tracking..."}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <PanoramaOutlined />
-        </ListItemAvatar>
-        <ListItemText
-          primary="64B1-43434"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                14:10:12s
-              </Typography>
-              {' — Car | Out of tracking...'}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <PanoramaOutlined />
-        </ListItemAvatar>
-        <ListItemText
-          primary="59C1-21523"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                13:54:54s
-              </Typography>
-              {' — Truck | In tracking...'}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <PanoramaOutlined />
-        </ListItemAvatar>
-        <ListItemText
-          primary="72K4-89565"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                13:51:41s
-              </Typography>
-              {' — Motorbike | In tracking...'}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <PanoramaOutlined />
-        </ListItemAvatar>
-        <ListItemText
-          primary="59F4-23524"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                13:34:19s
-              </Typography>
-              {' — Car | Out of tracking...'}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <PanoramaOutlined />
-        </ListItemAvatar>
-        <ListItemText
-          primary="59F4-89899"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                13:12:40s
-              </Typography>
-              {' — Bus | Out of tracking...'}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
+      	{
+      		listLicensePlate.map((item, key) => {
+      			return (
+      				<LicensePlateItem key={key} classes={classes}
+						src={item.src} captime={item.captime}
+						textlp={item.textlp} textinfo={item.textinfo}/>
+      			)
+      		})
+      	}
       </List>
     </div>
   );

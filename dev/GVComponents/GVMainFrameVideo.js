@@ -23,7 +23,10 @@ class GVMainFrameVideo extends React.Component {
 
 		return (
 			<div className={classes.root}>
-				<iframe width="100%" height="auto" src="./static/videos/vl.mp4" allowFullScreen></iframe>
+				<video width="100%" autoPlay="autoplay"
+					controls="controls"
+    				loop="loop" height="auto" 
+    				src="./static/videos/vl.mp4" allowFullScreen></video>
 			</div>
 		);
 	};
